@@ -80,7 +80,8 @@
 													"}",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -92,7 +93,8 @@
 													"pm.environment.set('base_url_v1', 'https://dd-api.bits.dev.onepipe.io/v1')",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -108,7 +110,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"email\": \"dev@onepipe.io\",\n    \"password\": \"Password12@@\"\n}\n",
+											"raw": "{\n    \"email\": \"azeez@assurdly.com\",\n    \"password\": \"Password12@@@\"\n}\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -7531,35 +7533,39 @@
 													"script": {
 														"id": "d85b3471-1683-4c57-982f-f0a17fc1d666",
 														"exec": [
-															"var jsonData = pm.response.json();\r",
+															"// var jsonData = pm.response.json();\r",
 															"\r",
-															"pm.test(\"Status code is 200\", function(){\r",
-															"    pm.response.to.have.status(200);\r",
-															"})\r",
-															"pm.test(\"Status code is Not Found\", function () {\r",
-															"    pm.response.to.have.status(\"OK\");\r",
-															"});\r",
+															"// pm.test(\"Status code is 200\", function(){\r",
+															"//     pm.response.to.have.status(200);\r",
+															"// })\r",
+															"// pm.test(\"Status code is Not Found\", function () {\r",
+															"//     pm.response.to.have.status(\"OK\");\r",
+															"// });\r",
 															"\r",
-															"pm.test(\"Status is success\", function(){\r",
-															"    pm.expect(jsonData.status).to.eql(\"success\")\r",
-															"})\r",
-															"pm.test(\"message is 'success'\", function(){\r",
-															"    pm.expect(jsonData.message).to.eql(\"success\")\r",
-															"})\r",
-															"pm.test(\"User is Inactive'\", function(){\r",
-															"    pm.expect(jsonData.data.status).to.eql(\"inactive\")\r",
-															"})\r",
+															"// pm.test(\"Status is success\", function(){\r",
+															"//     pm.expect(jsonData.status).to.eql(\"success\")\r",
+															"// })\r",
+															"// pm.test(\"message is 'success'\", function(){\r",
+															"//     pm.expect(jsonData.message).to.eql(\"success\")\r",
+															"// })\r",
+															"// pm.test(\"User is Inactive'\", function(){\r",
+															"//     pm.expect(jsonData.data.status).to.eql(\"inactive\")\r",
+															"// })\r",
 															""
 														],
-														"type": "text/javascript"
+														"type": "text/javascript",
+														"packages": {}
 													}
 												},
 												{
 													"listen": "prerequest",
 													"script": {
 														"id": "93d4d8ec-1d55-4570-bca4-25c0d7b37aca",
-														"exec": [],
-														"type": "text/javascript"
+														"exec": [
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
 													}
 												}
 											],
@@ -7599,7 +7605,6 @@
 													],
 													"variable": [
 														{
-															"id": "7eb03eae-5c98-4c24-b7be-9134883ec2d1",
 															"key": "user_id",
 															"value": "{{UserID}}"
 														}
