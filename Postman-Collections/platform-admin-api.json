@@ -3855,15 +3855,19 @@
 													"    pm.expect(jsonData.data.last_name).to.eql(Request.last_name)\r",
 													"})"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "9bd79730-57ff-439b-8ffd-357a2ac1f839",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -3888,7 +3892,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"first_name\": \"{{$randomFirstName}}\",\n    \"last_name\": \"Pascal\"\n}",
+											"raw": "{\n    \"first_name\": \"{{$randomFirstName}}\",\n    \"last_name\": \"Azeez\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
