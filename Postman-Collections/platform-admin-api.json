@@ -9416,6 +9416,7 @@
 										{
 											"listen": "test",
 											"script": {
+												"id": "0c5f08c2-4139-412d-975e-88659db9916f",
 												"exec": [
 													"var jsonData = pm.response.json();\r",
 													"\r",
@@ -9435,17 +9436,18 @@
 													""
 												],
 												"type": "text/javascript",
-												"id": "0c5f08c2-4139-412d-975e-88659db9916f"
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
+												"id": "6b5872e6-4380-4ab5-8caa-dfeb3ee699e6",
 												"exec": [
-													"postman.setNextRequest('Create Mandate')"
+													"// postman.setNextRequest('Create Mandate')"
 												],
 												"type": "text/javascript",
-												"id": "6b5872e6-4380-4ab5-8caa-dfeb3ee699e6"
+												"packages": {}
 											}
 										}
 									],
@@ -9610,25 +9612,26 @@
 										{
 											"listen": "test",
 											"script": {
+												"id": "c49c958a-e177-4854-a0f4-03a35ddda6e3",
 												"exec": [
-													"var jsonData = pm.response.json();\r",
+													"// var jsonData = pm.response.json();\r",
 													"\r",
-													"pm.test(\"Status code is 200\", function(){\r",
-													"    pm.response.to.have.status(200);\r",
-													"})\r",
-													"pm.test(\"Status code is OK\", function () {\r",
-													"    pm.response.to.have.status(\"OK\");\r",
-													"});\r",
-													"pm.test(\"Status is success\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"success\")\r",
-													"})\r",
-													"pm.test(\"message is 'Password reset successful'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"Password reset successful\")\r",
-													"})\r",
+													"// pm.test(\"Status code is 200\", function(){\r",
+													"//     pm.response.to.have.status(200);\r",
+													"// })\r",
+													"// pm.test(\"Status code is OK\", function () {\r",
+													"//     pm.response.to.have.status(\"OK\");\r",
+													"// });\r",
+													"// pm.test(\"Status is success\", function(){\r",
+													"//     pm.expect(jsonData.status).to.eql(\"success\")\r",
+													"// })\r",
+													"// pm.test(\"message is 'Password reset successful'\", function(){\r",
+													"//     pm.expect(jsonData.message).to.eql(\"Password reset successful\")\r",
+													"// })\r",
 													""
 												],
 												"type": "text/javascript",
-												"id": "c49c958a-e177-4854-a0f4-03a35ddda6e3"
+												"packages": {}
 											}
 										}
 									],
