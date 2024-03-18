@@ -2451,110 +2451,6 @@
 							"id": "678f85d6-6a03-4e63-a327-5dba2f860363"
 						},
 						{
-							"name": "Activate Role",
-							"item": [
-								{
-									"name": "Activate Role - Valid",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "a2caf89c-e053-415b-97ce-d556bf0090b8",
-												"exec": [
-													"var jsonData = pm.response.json()\r",
-													"pm.test(\"Status code is 200\", function(){\r",
-													"    pm.response.to.have.status(200);\r",
-													"})\r",
-													"pm.test(\"Status code is OK\", function () {\r",
-													"    pm.response.to.have.status(\"OK\");\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Statu is success\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"success\")\r",
-													"})\r",
-													"pm.test(\"Error message should be 'success'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"success\")\r",
-													"})\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "c1dd8c10-9b6d-4305-81fa-3205870fcbce",
-												"exec": [
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "dadadb74-2b86-43d2-b439-231ffb1bf13e",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{TOKEN}}"
-											}
-										},
-										"method": "PATCH",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Bearer {{BillerTOKEN}}",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{base_url}}/roles/:role_id/:type?token=000000",
-											"host": [
-												"{{base_url}}"
-											],
-											"path": [
-												"roles",
-												":role_id",
-												":type"
-											],
-											"query": [
-												{
-													"key": "token",
-													"value": "000000"
-												}
-											],
-											"variable": [
-												{
-													"key": "role_id",
-													"value": "{{roleId}}"
-												},
-												{
-													"key": "type",
-													"value": "activate"
-												}
-											]
-										}
-									},
-									"response": []
-								}
-							],
-							"id": "cf871a86-f34f-45f7-be99-1120fb197571"
-						},
-						{
 							"name": "Deactivate Role",
 							"item": [
 								{
@@ -2657,6 +2553,110 @@
 								}
 							],
 							"id": "ec5bc4a3-10dd-42a1-bfac-5a3068594dd2"
+						},
+						{
+							"name": "Activate Role",
+							"item": [
+								{
+									"name": "Activate Role - Valid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "a2caf89c-e053-415b-97ce-d556bf0090b8",
+												"exec": [
+													"var jsonData = pm.response.json()\r",
+													"pm.test(\"Status code is 200\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"})\r",
+													"pm.test(\"Status code is OK\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Statu is success\", function(){\r",
+													"    pm.expect(jsonData.status).to.eql(\"success\")\r",
+													"})\r",
+													"pm.test(\"Error message should be 'success'\", function(){\r",
+													"    pm.expect(jsonData.message).to.eql(\"success\")\r",
+													"})\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "c1dd8c10-9b6d-4305-81fa-3205870fcbce",
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "dadadb74-2b86-43d2-b439-231ffb1bf13e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{TOKEN}}"
+											}
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{BillerTOKEN}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/roles/:role_id/:type?token=000000",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"roles",
+												":role_id",
+												":type"
+											],
+											"query": [
+												{
+													"key": "token",
+													"value": "000000"
+												}
+											],
+											"variable": [
+												{
+													"key": "role_id",
+													"value": "{{roleId}}"
+												},
+												{
+													"key": "type",
+													"value": "activate"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "cf871a86-f34f-45f7-be99-1120fb197571"
 						},
 						{
 							"name": "Update Role",
