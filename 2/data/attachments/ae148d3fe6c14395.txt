@@ -1,0 +1,7 @@
+{
+    "name": "Direct",
+    "description": "Est esse dolore aliquam officiis.",
+    "webhook": "https://lendsqr.com",
+    "timeout": 10,
+    "token" : "{{2FAToken}}"
+}

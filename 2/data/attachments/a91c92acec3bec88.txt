@@ -1,0 +1,7 @@
+{
+    "name": "Lendsqr",
+    "description": "",
+    "webhook": "https://lendsqr.com",
+    "timeout": 10,
+    "token": "000000"
+}

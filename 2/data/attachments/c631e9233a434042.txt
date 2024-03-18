@@ -1,0 +1,6 @@
+{
+    "name": "Berkshire Role",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "permissions": ["add_users"],
+    "token": "{{2FAToken}}"
+}

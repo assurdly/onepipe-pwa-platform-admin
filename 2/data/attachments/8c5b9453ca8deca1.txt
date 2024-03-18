@@ -1,0 +1,33 @@
+var jsonData = pm.response.json();
+var RequestData = JSON.parse(pm.request.body.raw)
+pm.test("Setting Environment variables", ()=>{
+    pm.environment.set("KeyName", jsonData.data.name)
+    pm.environment.set("PublicKey", jsonData.data.public_key)
+    pm.environment.set("SecretKey", jsonData.data.secret_key)
+    pm.environment.set("KeyID", jsonData.data.id)
+})
+
+pm.test("Status code is 200", function(){
+    pm.response.to.have.status(200);
+})
+pm.test("Status code is OK", function () {
+    pm.response.to.have.status("OK");
+});
+pm.test("Status is Success", function(){
+    pm.expect(jsonData.status).to.eql("success")
+})
+pm.test("message is 'Success'", function(){
+    pm.expect(jsonData.message).to.eql("success")
+})
+pm.test("Validate that an accurate API Key Name is returned", function(){
+    pm.expect(jsonData.data.name).to.not.empty
+})
+pm.test("Validate that an Description is returned", function(){
+    pm.expect(jsonData.data.description).to.not.empty
+})
+pm.test("Validate that an accurate webhook is returned", function(){
+    pm.expect(jsonData.data.webhook).to.not.empty
+})
+pm.test("Validate that an accurate timeout is returned", function(){
+    pm.expect(jsonData.data.timeout).to.not.eql(null)
+})

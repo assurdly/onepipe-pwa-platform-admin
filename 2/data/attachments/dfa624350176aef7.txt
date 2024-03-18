@@ -1,0 +1,5 @@
+{
+    "current_password": "",
+    "new_password": "Tester@11.",
+    "confirm_new_password": "Tester@11."
+}

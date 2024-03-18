@@ -1,0 +1,5 @@
+{
+    "name": "Progressive Role",
+    "description": "Magnam ut explicabo.",
+    "permissions": ["add_users", "view_users"]
+}

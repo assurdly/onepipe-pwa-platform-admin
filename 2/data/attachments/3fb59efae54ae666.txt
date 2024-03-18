@@ -1,0 +1,15 @@
+var jsonData = pm.response.json();
+var RequestData = JSON.parse(pm.request.body.raw)
+
+pm.test("Status code is 400", function(){
+    pm.response.to.have.status(400);
+})
+pm.test("Status code is Bad Request", function () {
+    pm.response.to.have.status("Bad Request");
+});
+pm.test("Status is error", function(){
+    pm.expect(jsonData.status).to.eql("error")
+})
+pm.test("message is 'Description is required'", function(){
+    pm.expect(jsonData.message).to.eql("Description cannot be empty")
+})

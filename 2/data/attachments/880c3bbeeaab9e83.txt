@@ -1,0 +1,4 @@
+{
+    "key": "{{KEY1}}",
+    "token": "{{2FAToken}}"
+}

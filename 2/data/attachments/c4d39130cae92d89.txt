@@ -1,0 +1,19 @@
+var jsonData = JSON.parse(responseBody);
+var Request = JSON.parse(pm.request.body.raw);
+pm.environment.set("UserID", jsonData.data.id)
+pm.environment.set("userEmail", jsonData.data.email)
+
+
+pm.test("Status code is 200", function(){
+    pm.response.to.have.status(200);
+})
+pm.test("Status code is OK", function () {
+    pm.response.to.have.status("OK");
+});
+
+pm.test("Status is success", function(){
+    pm.expect(jsonData.status).to.eql("success")
+})
+pm.test("Invite sent successfully", function(){
+    pm.expect(jsonData.message).to.eql("Invite sent successfully")
+})
