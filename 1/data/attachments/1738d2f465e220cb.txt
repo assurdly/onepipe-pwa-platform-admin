@@ -1,0 +1,6 @@
+{
+    "email": "OperationsKallie@mailinator.com",
+    "role_id": 1,
+    "token": null
+
+}

@@ -1,0 +1,1 @@
+{"status":"error","message":"Current password cannot be empty","data":{}}

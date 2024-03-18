@@ -1,0 +1,1 @@
+{"status":"error","message":"New password is too weak. Enter a strong password greater than 8 characters that also contains a capital letter, small letter, number and special characters","data":{}}

@@ -1,0 +1,15 @@
+var jsonData = pm.response.json();
+
+pm.test("Status code is 404", function(){
+    pm.response.to.have.status(200);
+})
+pm.test("Status code is OK", function () {
+    pm.response.to.have.status("OK");
+});
+
+pm.test("Status is success", function(){
+    pm.expect(jsonData.status).to.eql("success")
+})
+pm.test("message is 'Role not found'", function(){
+    pm.expect(jsonData.message).to.eql("success")
+})

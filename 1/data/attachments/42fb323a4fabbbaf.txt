@@ -1,0 +1,5 @@
+{
+    "name": "Inlet Role",
+    "description": "Consequatur vel qui provident et porro.",
+    "permissions": ["add_users", "view_users"]
+}

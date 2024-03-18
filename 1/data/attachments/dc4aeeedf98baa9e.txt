@@ -1,0 +1,24 @@
+var jsonData = pm.response.json();
+var Request = JSON.parse(pm.request.body.raw)
+
+pm.test("Status code is 200", function(){
+    pm.response.to.have.status(200);
+})
+pm.test("Status code is OK", function () {
+    pm.response.to.have.status("OK");
+});
+pm.test("Status is Success", function(){
+    pm.expect(jsonData.status).to.eql("success")
+})
+pm.test("message is 'success'", function(){
+    pm.expect(jsonData.message).to.eql("success")
+})
+pm.test("Validate the active status is present with the count", function(){
+    pm.expect(jsonData.data).to.not.be.empty
+})
+pm.test("Validate that the last name returned is accurate", function(){
+    pm.expect(jsonData.data.last_name).to.eql(Request.last_name)
+})
+pm.test("Validate that the first name is returned", function(){
+    pm.expect(jsonData.data.first_name).to.not.be.empty
+})

@@ -1,0 +1,2 @@
+pm.environment.set('base_url', 'https://dd-api.bits.dev.onepipe.io/v1')
+pm.environment.set('base_url_v1', 'https://dd-api.bits.dev.onepipe.io/v1')
