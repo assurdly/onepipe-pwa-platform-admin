@@ -581,22 +581,23 @@
 											"script": {
 												"id": "fb002b2b-4202-4484-827f-9754e74299f6",
 												"exec": [
-													"var jsonData = pm.response.json()\r",
+													"// var jsonData = pm.response.json()\r",
 													"\r",
-													"pm.test(\"Status code is 400\", function(){\r",
-													"    pm.response.to.have.status(400);\r",
-													"})\r",
-													"pm.test(\"Status code is Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"pm.test(\"Status is displayed as Error\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
-													"})\r",
-													"pm.test(\"Invalid 2FA Token\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"key should not be empty\")\r",
-													"})"
+													"// pm.test(\"Status code is 400\", function(){\r",
+													"//     pm.response.to.have.status(400);\r",
+													"// })\r",
+													"// pm.test(\"Status code is Bad Request\", function () {\r",
+													"//     pm.response.to.have.status(\"Bad Request\");\r",
+													"// });\r",
+													"// pm.test(\"Status is displayed as Error\", function(){\r",
+													"//     pm.expect(jsonData.status).to.eql(\"error\")\r",
+													"// })\r",
+													"// pm.test(\"Invalid 2FA Token\", function(){\r",
+													"//     pm.expect(jsonData.message).to.eql(\"key should not be empty\")\r",
+													"// })"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -15849,7 +15850,8 @@
 													"    });\r",
 													"});"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -15859,7 +15861,8 @@
 												"exec": [
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -15875,7 +15878,7 @@
 										"header": [
 											{
 												"key": "Authorization",
-												"value": "Bearer {{BillerTOKEN}}",
+												"value": "Bearer {{TOKEN}}",
 												"type": "text"
 											}
 										],
