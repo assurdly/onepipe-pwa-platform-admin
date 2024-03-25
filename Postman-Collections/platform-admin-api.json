@@ -29533,15 +29533,19 @@
 													"    pm.expect(jsonData.data).to.not.be.empty",
 													"})"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "a3483249-fd9a-4366-b9b3-b88cae713028",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -29561,7 +29565,8 @@
 											{
 												"key": "Authorization",
 												"value": "Bearer {{TOKEN}}",
-												"type": "text"
+												"type": "text",
+												"disabled": true
 											}
 										],
 										"body": {
@@ -29584,9 +29589,8 @@
 											],
 											"variable": [
 												{
-													"id": "17ceb22e-db5a-44a2-9ed8-596c3bd11262",
 													"key": "subscription_id",
-													"value": ""
+													"value": "364"
 												}
 											]
 										}
@@ -29755,15 +29759,19 @@
 													"    pm.expect(jsonData.data).to.not.be.empty",
 													"})"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "a3483249-fd9a-4366-b9b3-b88cae713028",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -29806,9 +29814,8 @@
 											],
 											"variable": [
 												{
-													"id": "17ceb22e-db5a-44a2-9ed8-596c3bd11262",
 													"key": "subscription_id",
-													"value": ""
+													"value": "364"
 												}
 											]
 										}
@@ -34332,11 +34339,12 @@
 													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
 													"})\r",
 													"pm.test(\"message is 'invalid signature'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"invalid signature\")\r",
+													"    pm.expect(jsonData.message).to.eql(\"jwt expired\")\r",
 													"})\r",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -34344,9 +34352,10 @@
 											"script": {
 												"id": "ebfb0b03-e827-4c80-86f6-9c08e12e4aa7",
 												"exec": [
-													"postman.setNextRequest(\"Logout - Invalid/expired Token\")"
+													"// postman.setNextRequest(\"Logout - Invalid/expired Token\")"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -36315,11 +36324,12 @@
 													"    pm.expect(jsonData.status).to.eql(\"error\")",
 													"})",
 													"pm.test(\"message is 'invalid signature'\", function(){",
-													"    pm.expect(jsonData.message).to.eql(\"invalid signature\")",
+													"    pm.expect(jsonData.message).to.eql(\"jwt expired\")",
 													"})",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -36329,7 +36339,8 @@
 												"exec": [
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
