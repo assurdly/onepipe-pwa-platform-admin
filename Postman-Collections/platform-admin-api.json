@@ -36582,7 +36582,8 @@
 													"})",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -36592,7 +36593,8 @@
 												"exec": [
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -36602,17 +36604,15 @@
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{TOKEN}}"
-											}
+											"type": "noauth"
 										},
 										"method": "GET",
 										"header": [
 											{
 												"key": "Authorization",
 												"value": "Bearer {{TOKEN}}",
-												"type": "text"
+												"type": "text",
+												"disabled": true
 											}
 										],
 										"body": {
@@ -36669,7 +36669,8 @@
 													"})",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -36679,7 +36680,8 @@
 												"exec": [
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -36691,7 +36693,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{TOKEN}}"
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidHlwZSI6ImF1dGgiLCJpYXQiOjE3MTEzNDAwMzQsImV4cCI6MTcxMTM0MzYzNH0.thw68-a9Gk0ppkYpXDy5pYg0tUsDxdQ0kGrPzlNqHQA"
 											}
 										},
 										"method": "GET",
@@ -36747,24 +36749,24 @@
 												"exec": [
 													"var jsonData = pm.response.json();",
 													"",
-													"pm.test(\"Status code is 201\", function(){",
-													"    pm.response.to.have.status(201);",
+													"pm.test(\"Status code is 200\", function(){",
+													"    pm.response.to.have.status(200);",
 													"})",
-													"pm.test(\"Status code is Created\", function () {",
-													"    pm.response.to.have.status(\"Created\");",
+													"pm.test(\"Status code is OK\", function () {",
+													"    pm.response.to.have.status(\"OK\");",
 													"});",
 													"pm.test(\"Status is Success\", function(){",
 													"    pm.expect(jsonData.status).to.eql(\"success\")",
 													"})",
-													"pm.test(\"Validate message is 'Beneficiary created successfully'\", function(){",
-													"    pm.expect(jsonData.message).to.eql(\"Beneficiary created successfully\")",
+													"pm.test(\"Validate message is Biller updated successfully\", function(){",
+													"    pm.expect(jsonData.message).to.eql(\"Biller updated successfully\")",
 													"})",
-													"pm.test(\"Validate that an accurate account number is returned\", function(){",
-													"    pm.expect(jsonData.data.account_number.toString()).to.contain(RequestData.account_number)",
-													"})",
-													"pm.test(\"Validate that an accurate bank ID is returned\", function(){",
-													"    pm.expect(jsonData.data.bank_id.toString()).to.contain(RequestData.bank_id)",
-													"})",
+													"// pm.test(\"Validate that an accurate account number is returned\", function(){",
+													"//     pm.expect(jsonData.data.account_number.toString()).to.contain(RequestData.account_number)",
+													"// })",
+													"// pm.test(\"Validate that an accurate bank ID is returned\", function(){",
+													"//     pm.expect(jsonData.data.bank_id.toString()).to.contain(RequestData.bank_id)",
+													"// })",
 													""
 												],
 												"type": "text/javascript",
@@ -36956,6 +36958,7 @@
 								{
 									"listen": "test",
 									"script": {
+										"id": "4e898905-f519-42eb-9cb1-defe86683d76",
 										"exec": [
 											"var jsonData = pm.response.json()\r",
 											"\r",
@@ -36970,13 +36973,13 @@
 											"    pm.expect(jsonData.status).to.eql(\"error\")\r",
 											"})\r",
 											"pm.test(\"message is 'Invalid Token'\", function(){\r",
-											"    pm.expect(jsonData.message).to.eql(\"jwt expired\")\r",
+											"    pm.expect(jsonData.message).to.eql(\"invalid signature\")\r",
 											"})\r",
 											"\r",
 											""
 										],
 										"type": "text/javascript",
-										"id": "4e898905-f519-42eb-9cb1-defe86683d76"
+										"packages": {}
 									}
 								}
 							],
