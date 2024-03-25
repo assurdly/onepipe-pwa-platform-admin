@@ -1,0 +1,1 @@
+{"status":"error","message":"frequency must be one of the following values: daily, weekly, monthly, yearly","data":{}}

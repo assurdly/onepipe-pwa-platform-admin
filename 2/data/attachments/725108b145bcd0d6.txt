@@ -1,0 +1,17 @@
+// var jsonData = pm.response.json();
+// var Token = jsonData.data.token_data.token
+// pm.environment.set("TOKEN1", Token)
+// pm.collectionVariables.set("TOKEN1", Token)
+
+// pm.test("Status code is 200", function(){
+//     pm.response.to.have.status(200);
+// })
+// pm.test("Status code is OK", function () {
+//     pm.response.to.have.status("OK");
+// });
+// pm.test("Status is Success", function(){
+//     pm.expect(jsonData.status).to.eql("success")
+// })
+// pm.test("message is successs", function(){
+//     pm.expect(jsonData.message).to.eql("success")
+// })  

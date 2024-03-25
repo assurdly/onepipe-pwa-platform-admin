@@ -1,0 +1,1 @@
+{"status":"error","message":"Cannot activate a user on a biller that is pending","data":{}}

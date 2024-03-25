@@ -1,0 +1,18 @@
+var jsonData = pm.response.json()
+pm.environment.set("KeyID", jsonData.data.id)
+pm.environment.set("PublicKey", jsonData.data.public_key)
+pm.environment.set("SecretKey", jsonData.data.secret_key)
+
+
+pm.test("Status code is 201", function(){
+    pm.response.to.have.status(201);
+})
+pm.test("Status code is Created", function () {
+    pm.response.to.have.status("Created");
+});
+pm.test("Status is displayed as success", function(){
+    pm.expect(jsonData.status).to.eql("success")
+})
+pm.test("Validate that error message is 'API keys created successfully'", function(){
+    pm.expect(jsonData.message).to.eql("API keys created successfully")
+})

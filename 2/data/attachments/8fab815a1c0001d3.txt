@@ -1,0 +1,5 @@
+{
+    "name": "Rapid Role",
+    "description": "Dicta nihil est pariatur magni et.",
+    "permissions": ["add_users", "view_users"]
+}

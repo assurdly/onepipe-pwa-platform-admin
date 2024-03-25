@@ -1,0 +1,1 @@
+{"status":"success","message":"success","data":{"account_name":"FRANCIS MARY DONATUS","bvn":"22000000089","session_id":"999999240325013633419772204336"}}

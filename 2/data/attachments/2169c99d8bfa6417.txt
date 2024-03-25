@@ -1,0 +1,1 @@
+{"status":"success","message":"success","data":{"transactions":{"count":0},"mandates":{"count":0}}}

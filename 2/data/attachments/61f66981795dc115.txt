@@ -1,0 +1,5 @@
+{
+    "email": "Keyboard@mailinator.com",
+    "role_id": 1,
+    "token": "{{2FAToken}}"
+}

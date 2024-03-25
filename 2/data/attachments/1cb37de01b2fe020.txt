@@ -1,0 +1,7 @@
+{
+    "name": "Turks",
+    "description": "Asperiores placeat deleniti asperiores exercitationem fugiat nam et veritatis numquam.",
+    "webhook": "https://lendsqr.com",
+    "timeout": 10,
+    "token" : "{{2FAToken}}"
+}

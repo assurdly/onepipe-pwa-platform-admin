@@ -1,0 +1,4 @@
+{
+    "new_password": "Password12@@",
+    "confirm_password": ""
+}

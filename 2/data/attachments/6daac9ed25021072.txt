@@ -1,0 +1,6 @@
+{
+    "account_number": "315964377e",
+    "bank_id": 11,
+    "address" : 2,
+    "token": "{{2FAToken}}"
+}

@@ -1,0 +1,33 @@
+var jsonData = pm.response.json();
+console.log(pm.request.url.query)
+pm.environment.set("TotalKeys", jsonData.data.meta.records)
+
+QueryParams = (pm.request.url.query)
+console.log(QueryParams.get('limit'))
+
+var limit = QueryParams.get('limit')
+
+
+pm.test("Status code is 200", function(){
+    pm.response.to.have.status(200);
+})
+pm.test("Status code is OK", function () {
+    pm.response.to.have.status("OK");
+});
+pm.test("Status is Success", function(){
+    pm.expect(jsonData.status).to.eql("success")
+})
+pm.test("message is 'success'", function(){
+    pm.expect(jsonData.message).to.eql("success")
+})
+pm.test("Validate that a data is returned", function(){
+    pm.expect(jsonData.data).to.not.be.empty
+})
+pm.test("Validate Page Size", function(){
+    pm.expect(jsonData.data.meta.page_size).to.eql(limit)
+})
+pm.test("Validate Page Size", function(){
+    console.log(parseInt(limit))
+    console.log(jsonData.data.data.length)
+    pm.expect(jsonData.data.data.length).to.lessThan(parseInt(limit)+1)
+})

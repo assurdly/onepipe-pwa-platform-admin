@@ -1,0 +1,1 @@
+{"status":"success","message":"success","data":{"transactions":[{"status":"total","count":174,"sum":"16790.00"},{"status":"failed","count":76,"sum":"9705.00"},{"status":"successful","count":98,"sum":"7085.00"}]}}

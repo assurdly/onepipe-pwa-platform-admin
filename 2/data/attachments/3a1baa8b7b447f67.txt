@@ -1,0 +1,7 @@
+{
+    "name": "Lendsqr",
+    "description": "Admin",
+    "webhook": "https://lendsqr",
+    "timeout": 10,
+    "token": "{{2FAToken}}"
+}

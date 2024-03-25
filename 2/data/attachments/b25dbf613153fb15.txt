@@ -1,0 +1,1 @@
+{"status":"error","message":"New password cannot be empty","data":{}}

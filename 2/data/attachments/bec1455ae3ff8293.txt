@@ -1,0 +1,18 @@
+// var jsonData = pm.response.json();
+
+// pm.test("Status code is 200", function(){
+//     pm.response.to.have.status(200);
+// })
+// pm.test("Status code is Not Found", function () {
+//     pm.response.to.have.status("OK");
+// });
+
+// pm.test("Status is success", function(){
+//     pm.expect(jsonData.status).to.eql("success")
+// })
+// pm.test("message is 'success'", function(){
+//     pm.expect(jsonData.message).to.eql("success")
+// })
+// pm.test("User is active'", function(){
+//     pm.expect(jsonData.data.status).to.eql("active")
+// })

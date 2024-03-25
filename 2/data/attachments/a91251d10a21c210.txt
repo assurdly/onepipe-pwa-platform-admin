@@ -1,0 +1,25 @@
+var jsonData = JSON.parse(responseBody);
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+})
+pm.test("Status code is OK", function () {
+    pm.response.to.have.status("OK");
+});
+
+pm.test("Status is success", function () {
+    pm.expect(jsonData.status).to.eql("success")
+})
+pm.test("message is 'success'", function () {
+    pm.expect(jsonData.message).to.eql("success")
+})
+pm.test("The Bank Name and Bank ID is returned", function () {
+    const Data = jsonData.data.data;
+    Data.forEach(function (bank) {
+        pm.expect(bank.id).to.be.a('number');
+        pm.expect(bank.name).to.be.a('string');
+        pm.expect(bank.bank_code).to.be.a('string');
+        pm.expect(bank.institution_code).to.be.a('string')
+        pm.expect(bank.institution_code.length).to.greaterThan(4);
+    });
+});

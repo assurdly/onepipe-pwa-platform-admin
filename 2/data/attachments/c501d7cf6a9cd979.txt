@@ -1,0 +1,5 @@
+{
+    "email": "Nash@mailinator.com",
+    "role_id": 23,
+    "token": "{{2FAToken}}"
+}

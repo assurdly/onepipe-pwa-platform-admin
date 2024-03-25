@@ -1,0 +1,10 @@
+{
+    "Authorization": "Bearer {{BillerTOKEN}}",
+    "User-Agent": "PostmanRuntime/7.37.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "03ffe5d3-5911-4e01-8d1c-b8f2b348f8d0",
+    "Host": "dd-api.bits.dev.onepipe.io",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}

@@ -1,0 +1,31 @@
+// var jsonData = pm.response.json();
+// var RequestData = JSON.parse(pm.request.body.raw)
+// pm.environment.set("subscription_id", jsonData.data.id)
+
+// pm.test("Status code is 201", function(){
+//     pm.response.to.have.status(201);
+// })
+// pm.test("Status code is Created", function () {
+//     pm.response.to.have.status("Created");
+// });
+// pm.test("Status is Success", function(){
+//     pm.expect(jsonData.status).to.eql("success")
+// })
+// pm.test("message is 'Mandate created successfully'", function(){
+//     pm.expect(jsonData.message).to.eql("Mandate created successfully")
+// })
+// pm.test("Validate that an accurate account number is returned", function(){
+//     pm.expect(jsonData.data.account_number).to.contain(RequestData.account_number)
+// })
+// pm.test("Validate that an accurate bank ID is returned", function(){
+//     pm.expect(jsonData.data.bank_id).to.eql(RequestData.bank_id)
+// })
+// pm.test("Validate that an accurate email is returned", function(){
+//     pm.expect(jsonData.data.email).to.contain(RequestData.email)
+// })
+// pm.test("Validate that an accurate amount is returned", function(){
+//     pm.expect(jsonData.data.amount.toString()).to.contain(RequestData.amount)
+// })
+// pm.test("Validate that an accurate Beneficiary ID is returned", function(){
+//     pm.expect(jsonData.data.beneficiary_id.toString()).to.contain(RequestData.beneficiary_id)
+// })

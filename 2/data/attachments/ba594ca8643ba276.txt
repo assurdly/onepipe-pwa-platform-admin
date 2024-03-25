@@ -1,0 +1,14 @@
+var jsonData = pm.response.json()
+
+pm.test("Status code is 400", function(){
+    pm.response.to.have.status(400);
+})
+pm.test("Status code is Bad Request", function () {
+    pm.response.to.have.status("Bad Request");
+});
+pm.test("Status is displayed as Error", function(){
+    pm.expect(jsonData.status).to.eql("error")
+})
+pm.test("Validate that error message is 'Invalid 2FA Token'", function(){
+    pm.expect(jsonData.message).to.eql("2fa is required to perform this operation.")
+})

@@ -1,0 +1,4 @@
+{
+    "status": "inactive",
+    "token": "{{2FAToken}}"
+}
