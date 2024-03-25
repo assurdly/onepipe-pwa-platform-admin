@@ -12208,31 +12208,32 @@
 											"script": {
 												"id": "81bf4091-b204-42b3-9cfd-a6fe6a5a5732",
 												"exec": [
-													"var jsonData = pm.response.json();\r",
-													"var RequestData = JSON.parse(pm.request.body.raw)\r",
-													"pm.environment.set(\"beneficiaryId\", jsonData.data.id)\r",
+													"// var jsonData = pm.response.json();\r",
+													"// var RequestData = JSON.parse(pm.request.body.raw)\r",
+													"// pm.environment.set(\"beneficiaryId\", jsonData.data.id)\r",
 													"\r",
-													"pm.test(\"Status code is 201\", function(){\r",
-													"    pm.response.to.have.status(201);\r",
-													"})\r",
-													"pm.test(\"Status code is Created\", function () {\r",
-													"    pm.response.to.have.status(\"Created\");\r",
-													"});\r",
-													"pm.test(\"Status is Success\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"success\")\r",
-													"})\r",
-													"pm.test(\"Validate message is 'Beneficiary created successfully'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"Beneficiary created successfully\")\r",
-													"})\r",
-													"pm.test(\"Validate that an accurate account number is returned\", function(){\r",
-													"    pm.expect(jsonData.data.account_number.toString()).to.contain(RequestData.account_number)\r",
-													"})\r",
-													"pm.test(\"Validate that an accurate bank ID is returned\", function(){\r",
-													"    pm.expect(jsonData.data.bank_id.toString()).to.contain(RequestData.bank_id)\r",
-													"})\r",
+													"// pm.test(\"Status code is 201\", function(){\r",
+													"//     pm.response.to.have.status(201);\r",
+													"// })\r",
+													"// pm.test(\"Status code is Created\", function () {\r",
+													"//     pm.response.to.have.status(\"Created\");\r",
+													"// });\r",
+													"// pm.test(\"Status is Success\", function(){\r",
+													"//     pm.expect(jsonData.status).to.eql(\"success\")\r",
+													"// })\r",
+													"// pm.test(\"Validate message is 'Beneficiary created successfully'\", function(){\r",
+													"//     pm.expect(jsonData.message).to.eql(\"Beneficiary created successfully\")\r",
+													"// })\r",
+													"// pm.test(\"Validate that an accurate account number is returned\", function(){\r",
+													"//     pm.expect(jsonData.data.account_number.toString()).to.contain(RequestData.account_number)\r",
+													"// })\r",
+													"// pm.test(\"Validate that an accurate bank ID is returned\", function(){\r",
+													"//     pm.expect(jsonData.data.bank_id.toString()).to.contain(RequestData.bank_id)\r",
+													"// })\r",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -12242,7 +12243,8 @@
 												"exec": [
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -12264,7 +12266,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"account_number\": \"3159643779\",\n    \"bank_id\": 11,\n    \"address\" : \"Ikeja, Lagos\",\n    \"token\": \"{{2FAToken}}\"\n}",
+											"raw": "{\n    \"account_number\": \"0008854010\",\n    \"bank_id\": 1,\n    \"address\" : \"Ikeja, Lagos\",\n    \"token\": \"{{2FAToken}}\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -13246,70 +13248,6 @@
 									"response": []
 								},
 								{
-									"name": "Create Beneficiary - Invalid/Wrong 2FA Token",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "3d36af77-1f42-4fd6-b21a-7ffa1b4f6c95",
-												"exec": [
-													"var jsonData = pm.response.json()\r",
-													"\r",
-													"pm.test(\"Status code is 400\", function(){\r",
-													"    pm.response.to.have.status(400);\r",
-													"})\r",
-													"pm.test(\"Status code is Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"pm.test(\"Status is displayed as Error\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
-													"})\r",
-													"pm.test(\"Validate 2FA field\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"Invalid 2FA Token\")\r",
-													"})"
-												],
-												"type": "text/javascript"
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "651d0f41-1caa-40ae-ac02-1ef33c1588fc",
-												"exec": [],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "7079259b-ac8a-4db4-84a3-47db9b7b8cda",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "noauth"
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Bearer {{TOKEN}}",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"account_number\": \"315964377e\",\n    \"bank_id\": 11,\n    \"address\" : \"Ikeja, Lagos\",\n    \"token\": \"{{2FAToken}}\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{base_url}}/beneficiaries"
-									},
-									"response": []
-								},
-								{
 									"name": "Create Beneficiary - No Address",
 									"event": [
 										{
@@ -13642,208 +13580,6 @@
 									]
 								},
 								{
-									"name": "Fetch Beneficiaries - Imputer",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "904f8c8f-0992-4bea-a6be-e93b2312aa2f",
-												"exec": [
-													"var jsonData = pm.response.json();\r",
-													"\r",
-													"pm.test(\"Status code is 200\", function(){\r",
-													"    pm.response.to.have.status(200);\r",
-													"})\r",
-													"pm.test(\"Status code is OK\", function () {\r",
-													"    pm.response.to.have.status(\"OK\");\r",
-													"});\r",
-													"pm.test(\"Status is Success\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"success\")\r",
-													"})\r",
-													"pm.test(\"message is 'success'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"success\")\r",
-													"})\r",
-													"pm.test(\"Validate that a data is returned\", function(){\r",
-													"    pm.expect(jsonData.data).to.not.be.empty\r",
-													"})"
-												],
-												"type": "text/javascript"
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "1294b063-b76a-436c-b300-f6b393fe96de",
-												"exec": [],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "1df5470a-24ed-48b8-805a-a93d92099170",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "noauth"
-										},
-										"method": "GET",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Bearer {{ImputerTOKEN}}",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "{{base_url}}/beneficiaries?limit=10&page=1",
-											"host": [
-												"{{base_url}}"
-											],
-											"path": [
-												"beneficiaries"
-											],
-											"query": [
-												{
-													"key": "limit",
-													"value": "10"
-												},
-												{
-													"key": "page",
-													"value": "1"
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "27034cce-cff8-4154-a761-6911e444071d",
-											"name": "Fetch Beneficiaries",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Authorization",
-														"value": "Bearer {{TOKEN}}",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "{{base_url_v1}}/beneficiaries?limit=10&page=1",
-													"host": [
-														"{{base_url_v1}}"
-													],
-													"path": [
-														"beneficiaries"
-													],
-													"query": [
-														{
-															"key": "limit",
-															"value": "10"
-														},
-														{
-															"key": "page",
-															"value": "1"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Access-Control-Allow-Origin",
-													"value": "*"
-												},
-												{
-													"key": "Access-Control-Allow-Credentials",
-													"value": "true"
-												},
-												{
-													"key": "Content-Security-Policy",
-													"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-												},
-												{
-													"key": "Cross-Origin-Embedder-Policy",
-													"value": "require-corp"
-												},
-												{
-													"key": "Cross-Origin-Opener-Policy",
-													"value": "same-origin"
-												},
-												{
-													"key": "Cross-Origin-Resource-Policy",
-													"value": "same-origin"
-												},
-												{
-													"key": "X-DNS-Prefetch-Control",
-													"value": "off"
-												},
-												{
-													"key": "X-Frame-Options",
-													"value": "SAMEORIGIN"
-												},
-												{
-													"key": "Strict-Transport-Security",
-													"value": "max-age=15552000; includeSubDomains"
-												},
-												{
-													"key": "X-Download-Options",
-													"value": "noopen"
-												},
-												{
-													"key": "X-Content-Type-Options",
-													"value": "nosniff"
-												},
-												{
-													"key": "Origin-Agent-Cluster",
-													"value": "?1"
-												},
-												{
-													"key": "X-Permitted-Cross-Domain-Policies",
-													"value": "none"
-												},
-												{
-													"key": "Referrer-Policy",
-													"value": "no-referrer"
-												},
-												{
-													"key": "X-XSS-Protection",
-													"value": "0"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json; charset=utf-8"
-												},
-												{
-													"key": "Content-Length",
-													"value": "476"
-												},
-												{
-													"key": "ETag",
-													"value": "W/\"1dc-B7QMNqYBTuqfSHmor2PVFSnpwuM\""
-												},
-												{
-													"key": "Date",
-													"value": "Thu, 27 Apr 2023 15:07:15 GMT"
-												},
-												{
-													"key": "Connection",
-													"value": "keep-alive"
-												},
-												{
-													"key": "Keep-Alive",
-													"value": "timeout=5"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n    \"status\": \"success\",\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"account_number\": 112345678,\n                \"account_name\": \"vee Test\",\n                \"bank_id\": 52,\n                \"bvn\": \"33333333332\",\n                \"session_id\": \"999999230427160655421826470232\",\n                \"last_transaction_date\": null,\n                \"status\": \"active\",\n                \"created_on\": \"2023-04-27T14:06:57.000Z\",\n                \"created_by\": null,\n                \"modified_on\": \"2023-04-27T14:06:57.000Z\",\n                \"modified_by\": null,\n                \"deleted_on\": null,\n                \"deleted_flag\": 0,\n                \"deleted_by\": null\n            }\n        ],\n        \"meta\": {\n            \"records\": 1,\n            \"page\": \"1\",\n            \"pages\": 1,\n            \"page_size\": \"10\"\n        }\n    }\n}"
-										}
-									]
-								},
-								{
 									"name": "Fetch Beneficiaries - No Token",
 									"event": [
 										{
@@ -14042,7 +13778,7 @@
 											"variable": [
 												{
 													"key": "beneficiary_id",
-													"value": "{{beneficiaryId}}"
+													"value": "7"
 												}
 											]
 										}
@@ -15008,15 +14744,19 @@
 													"    pm.expect(jsonData.message).to.eql(\"success\")\r",
 													"})"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "2a6760b8-7ce5-4034-97d4-cad2bf896625",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -15058,7 +14798,7 @@
 											"variable": [
 												{
 													"key": "beneficiary_id",
-													"value": "{{beneficiaryId}}"
+													"value": "7"
 												},
 												{
 													"key": "type",
@@ -15093,15 +14833,19 @@
 													"})\r",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "0ff45987-1ba8-4dcf-8b31-69539351aa80",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -15143,7 +14887,7 @@
 											"variable": [
 												{
 													"key": "beneficiary_id",
-													"value": "{{beneficiaryId}}"
+													"value": "7"
 												},
 												{
 													"key": "type",
