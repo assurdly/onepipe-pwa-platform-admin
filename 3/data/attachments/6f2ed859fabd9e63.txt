@@ -1,0 +1,4 @@
+{
+    "new_password": "Passwor",
+    "confirm_password": "Passwor"
+}

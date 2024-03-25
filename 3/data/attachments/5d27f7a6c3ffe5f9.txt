@@ -1,0 +1,5 @@
+{
+    "name": "Azeez",
+    "account_number": "2265006649",
+    "bank_id": 40
+}

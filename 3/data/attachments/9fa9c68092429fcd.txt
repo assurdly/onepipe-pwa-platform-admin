@@ -1,0 +1,6 @@
+{
+    "account_number": "",
+    "bank_id": 11,
+    "address" : "Ikeja, Lagos",
+    "token": "{{2FAToken}}"
+}

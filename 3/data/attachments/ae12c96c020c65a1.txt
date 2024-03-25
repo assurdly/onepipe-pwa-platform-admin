@@ -1,0 +1,12 @@
+{
+    "account_number": "2150302690",
+    "frequency": "",
+    "phone_number": "09055755671",
+    "bank_code": "057",
+    "email": "adeolu@lendsqr.com",
+    "start_date": "2024-08-10",
+    "end_date": "2024-08-24",
+    "narration": "Rand",
+    "amount": 50,
+    "token": "000000"
+}

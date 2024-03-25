@@ -1,0 +1,15 @@
+var jsonData = JSON.parse(responseBody);
+
+pm.test("Status code is 401", function(){
+    pm.response.to.have.status(401);
+})
+pm.test("Status code is Unauthorized", function () {
+    pm.response.to.have.status("Unauthorized");
+});
+
+pm.test("Status is error", function(){
+    pm.expect(jsonData.status).to.eql("error")
+})
+pm.test("message is 'jwt expired'", function(){
+    pm.expect(jsonData.message).to.eql("invalid signature")
+})

@@ -1,0 +1,20 @@
+var jsonData = pm.response.json();
+
+pm.test("Status code is 200", function(){
+    pm.response.to.have.status(200);
+})
+pm.test("Status code is OK", function () {
+    pm.response.to.have.status("OK");
+});
+pm.test("Status is Success", function(){
+    pm.expect(jsonData.status).to.eql("success")
+})
+pm.test("Validate message is Biller updated successfully", function(){
+    pm.expect(jsonData.message).to.eql("Biller updated successfully")
+})
+// pm.test("Validate that an accurate account number is returned", function(){
+//     pm.expect(jsonData.data.account_number.toString()).to.contain(RequestData.account_number)
+// })
+// pm.test("Validate that an accurate bank ID is returned", function(){
+//     pm.expect(jsonData.data.bank_id.toString()).to.contain(RequestData.bank_id)
+// })

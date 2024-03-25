@@ -1,0 +1,4 @@
+{
+    "email": "minnie",
+    "password": "1234567890"
+}

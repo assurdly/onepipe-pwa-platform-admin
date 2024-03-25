@@ -1,0 +1,17 @@
+var jsonData = pm.response.json();
+
+pm.test("Status code is 200", function(){
+    pm.response.to.have.status(200);
+})
+pm.test("Status code is OK", function () {
+    pm.response.to.have.status("OK");
+});
+pm.test("Status is Success", function(){
+    pm.expect(jsonData.status).to.eql("success")
+})
+pm.test("message is 'success'", function(){
+    pm.expect(jsonData.message).to.eql("success")
+})
+// pm.test("Validate that all categories are present", function(){
+//     pm.expect(jsonData.data.data[0]).to.include({"name":"API key"}, {"name":"Email Base URL"}, {"name":"Email IV"}, {"name":"Email Key"}, {"name":"Email Provider"}, {"name":"Email Sender ID"}, {"name":"Host IP"}, {"name":"Inactivity Timeout"}, {"name":"Lock IP Address"}, {"name":"Mandate Frequency"}, {"name":"Notifications Group Email"}, {"name":"Number of API keys"}, {"name":"Request Timeout"})
+// })

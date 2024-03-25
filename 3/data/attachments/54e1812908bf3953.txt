@@ -1,0 +1,23 @@
+var jsonData = pm.response.json();
+
+pm.test("Status code is 200", function(){
+    pm.response.to.have.status(200);
+})
+pm.test("Status code is OK", function () {
+    pm.response.to.have.status("OK");
+});
+pm.test("Status is Success", function(){
+    pm.expect(jsonData.status).to.eql("success")
+})
+pm.test("message is 'success'", function(){
+    pm.expect(jsonData.message).to.eql("success")
+})
+/**pm.test("Validate the sum total of Pending, Active and Inactive stats", function(){
+    var Pending = jsonData.data[2].count
+    var Inactive = jsonData.data[1].count
+    var Active = jsonData.data[0].count
+    var MandateID = pm.environment.get("mandate_id")
+    var Total = Pending + Inactive + Active 
+    console.log(Pending, Inactive, Active, Total, MandateID )
+    pm.expect(Total).to.eql(MandateID)
+})**/

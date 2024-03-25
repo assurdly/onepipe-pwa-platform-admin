@@ -1,0 +1,15 @@
+var jsonData = pm.response.json();
+
+pm.test("Status code is 400", function(){
+    pm.response.to.have.status(400);
+})
+pm.test("Status code is Bad Request", function () {
+    pm.response.to.have.status("Bad Request");
+});
+
+pm.test("Status is success", function(){
+    pm.expect(jsonData.status).to.eql("error")
+})
+pm.test("message is 'Cannot activate an active user'", function(){
+    pm.expect(jsonData.message).to.include("Cannot activate a user")
+})

@@ -1,0 +1,56 @@
+var jsonData = pm.response.json();
+var Request = JSON.parse(pm.request.body.raw);
+
+
+if(jsonData.data.two_fa === true){
+    var Key = jsonData.data.key
+    pm.environment.set("KEY", Key)
+    pm.collectionVariables.set("KEY", Key)
+
+    pm.test("Status code is 200", function(){
+        pm.response.to.have.status(200);
+    })
+    pm.test("Status code is OK", function () {
+        pm.response.to.have.status("OK");
+    });
+    pm.test("Status is Success", function(){
+        pm.expect(jsonData.status).to.eql("success")
+    })
+    pm.test("message is successs", function(){
+        pm.expect(jsonData.message).to.eql("success")
+    })  
+    pm.test("Check for two fa", function(){
+    pm.expect(jsonData.data.two_fa).to.eql(true)
+    })
+}
+else if (jsonData.data.user.two_fa === 0){
+    pm.test("2FA is false", function(){
+        pm.expect(jsonData.data.user.two_fa).to.eql(0)
+    })
+    var Token = jsonData.data.token_data.token
+    pm.environment.set("TOKEN", Token)
+    pm.collectionVariables.set("TOKEN", Token)
+    pm.test("Status code is 200", function(){
+    pm.response.to.have.status(200);
+    })
+    pm.test("Status code is OK", function () {
+        pm.response.to.have.status("OK");
+    });
+
+        pm.test("Status code is OK", function () {
+        pm.response.to.have.status("OK");
+    });
+    
+    pm.test("Status is Success", function(){
+        pm.expect(jsonData.status).to.eql("success")
+    })
+    pm.test("message is successs", function(){
+        pm.expect(jsonData.message).to.eql("success")
+    })
+    pm.test("two fa is false", function(){
+        pm.expect(jsonData.data.user.two_fa).to.equal(0)
+    })
+    pm.test("Email is accurate", function(){
+        pm.expect(jsonData.data.user.email).to.eql(Request.email)
+    })
+}

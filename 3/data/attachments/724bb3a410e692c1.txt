@@ -1,0 +1,5 @@
+{
+    "name": "copy Role",
+    "description": "Laborum sed aut.",
+    "permissions": ["add_users", "view_users"]
+}

@@ -1,0 +1,1 @@
+{"status":"error","message":"GET /v1/users/613/mandates?limit=5&page=1 Not Found"}

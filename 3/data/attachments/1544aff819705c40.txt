@@ -1,0 +1,27 @@
+var jsonData = JSON.parse(responseBody);
+const fetchedBiller = jsonData.data.data[0].id
+pm.environment.set("fetchedBiller", fetchedBiller)
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+})
+pm.test("Status code is OK", function () {
+    pm.response.to.have.status("OK");
+});
+
+pm.test("Status is success", function () {
+    pm.expect(jsonData.status).to.eql("success")
+})
+pm.test("message is 'success'", function () {
+    pm.expect(jsonData.message).to.eql("success")
+})
+pm.test("The right data type for Billers Name, Billers ID, rc and email is returned", function () {
+    const Data = jsonData.data.data;
+    Data.forEach(function (biller) {
+        pm.expect(biller.id).to.be.a('number');
+        pm.expect(biller.name).to.be.a('string');
+        pm.expect(biller.rc_number).to.be.a('string');
+        pm.expect(biller.email).to.be.a('string')
+        pm.expect(biller.code).to.be.a('string');
+    });
+});

@@ -1,0 +1,5 @@
+{
+    "webhook": "https://webhook.site/688e8a2e-8d39-4622-9b90-a3f91e1c239e",
+    "token": "{{2FAToken}}",
+    "external_encryption_public_key" : "-----BEGIN RSA PUBLIC KEY-----MIIBCgKCAQEAtA0cGzgNtMgLibR6BTBzCODx2yrZgnOoTwEG3drWHYCymaJPZ/qVCV1OzjA+NQlCuPatRUVQ4n/K5vymu44OXPeBQFbxjaDIMZ4FnmvQEmdqrJkrVxODPH2Se0WvZm2jd/k7OQPR1J0h93rWzpkk6u600BYggOOASFcnmN7LVm8Ef8OeKBSZuqFsnUtIFL1+vbcY9zvWdxrB+v4gIMrkhsN9Wr3S+FucFM+MkeduX3bCKbgGanZlBbHmskQwzibKdAZmndwxwADBqzSN799+sdabgBVb3xNPWr00VqQyVeIS9vLHXxk0mS80ZIWCMxu7vesBlTKzdthxE641cBmJBQIDAQAB-----END RSA PUBLIC KEY-----"
+}

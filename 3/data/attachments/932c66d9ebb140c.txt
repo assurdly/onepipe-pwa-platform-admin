@@ -1,0 +1,4 @@
+{
+    "status": "inactive",
+    "role_id": 2
+}

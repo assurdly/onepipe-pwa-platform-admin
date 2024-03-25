@@ -1,0 +1,7 @@
+{
+    "name": "hack",
+    "description": "Assumenda labore aut voluptatum odit nam.",
+    "webhook": "https://lendsqr.com",
+    "timeout": 10,
+    "token" : "{{2FAToken}}"
+}

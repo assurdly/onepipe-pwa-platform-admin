@@ -1,0 +1,2 @@
+//console.log(pm.request.url.variables)
+//console.log(pm.request.url.variables.value)
