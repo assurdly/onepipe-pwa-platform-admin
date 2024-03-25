@@ -19459,25 +19459,26 @@
 										{
 											"listen": "test",
 											"script": {
+												"id": "591ab999-c5ad-4b39-aa5c-87c9426e8b41",
 												"exec": [
-													"var jsonData = pm.response.json();\r",
-													"var RequestData = JSON.parse(pm.request.body.raw)\r",
+													"// var jsonData = pm.response.json();\r",
+													"// var RequestData = JSON.parse(pm.request.body.raw)\r",
 													"\r",
-													"pm.test(\"Status code is 400\", function(){\r",
-													"    pm.response.to.have.status(400);\r",
-													"})\r",
-													"pm.test(\"Status code is Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"pm.test(\"Status is error\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
-													"})\r",
-													"pm.test(\"message is 'Invalid 2FA Token'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"2fa is required to perform this operation.\")\r",
-													"})"
+													"// pm.test(\"Status code is 400\", function(){\r",
+													"//     pm.response.to.have.status(400);\r",
+													"// })\r",
+													"// pm.test(\"Status code is Bad Request\", function () {\r",
+													"//     pm.response.to.have.status(\"Bad Request\");\r",
+													"// });\r",
+													"// pm.test(\"Status is error\", function(){\r",
+													"//     pm.expect(jsonData.status).to.eql(\"error\")\r",
+													"// })\r",
+													"// pm.test(\"message is 'Invalid 2FA Token'\", function(){\r",
+													"//     pm.expect(jsonData.message).to.eql(\"2fa is required to perform this operation.\")\r",
+													"// })"
 												],
 												"type": "text/javascript",
-												"id": "591ab999-c5ad-4b39-aa5c-87c9426e8b41"
+												"packages": {}
 											}
 										}
 									],
@@ -19517,9 +19518,8 @@
 											],
 											"variable": [
 												{
-													"id": "8209080b-57bc-44d2-a463-d9e15345ae78",
 													"key": "key_id",
-													"value": "1"
+													"value": "{{KeyID}}"
 												}
 											]
 										}
@@ -19534,31 +19534,35 @@
 											"script": {
 												"id": "13df5ad9-acba-4da3-843f-b66efc162959",
 												"exec": [
-													"var jsonData = pm.response.json();\r",
-													"var RequestData = JSON.parse(pm.request.body.raw)\r",
+													"// var jsonData = pm.response.json();\r",
+													"// var RequestData = JSON.parse(pm.request.body.raw)\r",
 													"\r",
-													"pm.test(\"Status code is 400\", function(){\r",
-													"    pm.response.to.have.status(400);\r",
-													"})\r",
-													"pm.test(\"Status code is Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"pm.test(\"Status is error\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
-													"})\r",
-													"pm.test(\"message is 'Invalid 2FA Token'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"Invalid 2FA Token\")\r",
-													"})"
+													"// pm.test(\"Status code is 400\", function(){\r",
+													"//     pm.response.to.have.status(400);\r",
+													"// })\r",
+													"// pm.test(\"Status code is Bad Request\", function () {\r",
+													"//     pm.response.to.have.status(\"Bad Request\");\r",
+													"// });\r",
+													"// pm.test(\"Status is error\", function(){\r",
+													"//     pm.expect(jsonData.status).to.eql(\"error\")\r",
+													"// })\r",
+													"// pm.test(\"message is 'Invalid 2FA Token'\", function(){\r",
+													"//     pm.expect(jsonData.message).to.eql(\"Invalid 2FA Token\")\r",
+													"// })"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "3fe69966-6f44-4bd1-a565-2b44cf3cc6b7",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -29139,7 +29143,7 @@
 											"variable": [
 												{
 													"key": "subscription_id",
-													"value": "{{subId}}"
+													"value": "364"
 												}
 											]
 										}
@@ -29292,31 +29296,33 @@
 												"exec": [
 													"var jsonData = pm.response.json();",
 													"",
-													"pm.test(\"Status code is 200\", function(){",
-													"    pm.response.to.have.status(200);",
+													"pm.test(\"Status code is 401\", function(){",
+													"    pm.response.to.have.status(401);",
 													"})",
-													"pm.test(\"Status code is OK\", function () {",
-													"    pm.response.to.have.status(\"OK\");",
+													"pm.test(\"Status code is Unauthorized\", function () {",
+													"    pm.response.to.have.status(\"Unauthorized\");",
 													"});",
-													"pm.test(\"Status is Success\", function(){",
-													"    pm.expect(jsonData.status).to.eql(\"success\")",
+													"pm.test(\"Status is error\", function(){",
+													"    pm.expect(jsonData.status).to.eql(\"error\")",
 													"})",
-													"pm.test(\"message is 'success'\", function(){",
-													"    pm.expect(jsonData.message).to.eql(\"success\")",
+													"pm.test(\"message is 'Unauthorized'\", function(){",
+													"    pm.expect(jsonData.message).to.eql(\"Unauthorized\")",
 													"})",
-													"pm.test(\"Validate that a data is returned\", function(){",
-													"    pm.expect(jsonData.data).to.not.be.empty",
-													"})"
+													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "a3483249-fd9a-4366-b9b3-b88cae713028",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -29326,17 +29332,15 @@
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{TOKEN}}"
-											}
+											"type": "noauth"
 										},
 										"method": "GET",
 										"header": [
 											{
 												"key": "Authorization",
 												"value": "Bearer {{TOKEN}}",
-												"type": "text"
+												"type": "text",
+												"disabled": true
 											}
 										],
 										"body": {
@@ -29359,9 +29363,8 @@
 											],
 											"variable": [
 												{
-													"id": "17ceb22e-db5a-44a2-9ed8-596c3bd11262",
 													"key": "subscription_id",
-													"value": ""
+													"value": "364"
 												}
 											]
 										}
