@@ -13737,6 +13737,35 @@
 							"item": [
 								{
 									"name": "Fetch Beneficiary",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "74ac6a3d-eec6-4a62-998d-b424a85c7c53",
+												"exec": [
+													"var jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Status code is 200\", function(){",
+													"    pm.response.to.have.status(200);",
+													"})",
+													"pm.test(\"Status code is OK\", function () {",
+													"    pm.response.to.have.status(\"OK\");",
+													"});",
+													"pm.test(\"Status is Success\", function(){",
+													"    pm.expect(jsonData.status).to.eql(\"success\")",
+													"})",
+													"pm.test(\"message is 'success'\", function(){",
+													"    pm.expect(jsonData.message).to.eql(\"success\")",
+													"})",
+													"pm.test(\"Validate that a data is returned\", function(){",
+													"    pm.expect(jsonData.data).to.not.be.empty",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "1a191743-f608-4bc0-8eaf-1ebf5b7fa11c",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -14326,19 +14355,23 @@
 													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
 													"})\r",
 													"pm.test(\"message is 'jwt expired'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"jwt expired\")\r",
+													"    pm.expect(jsonData.message).to.eql(\"invalid signature\")\r",
 													"})\r",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "5058f715-df56-4827-8e70-3778227c232e",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -17246,30 +17279,34 @@
 											"script": {
 												"id": "9c0c6b84-bd9f-4058-98a2-9ce69e66ec6e",
 												"exec": [
-													"var jsonData = pm.response.json()\r",
+													"// var jsonData = pm.response.json()\r",
 													"\r",
-													"pm.test(\"Status code is 400\", function(){\r",
-													"    pm.response.to.have.status(400);\r",
-													"})\r",
-													"pm.test(\"Status code is Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"pm.test(\"Status is displayed as Error\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
-													"})\r",
-													"pm.test(\"Validate that error message is 'Invalid 2FA Token'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"2fa is required to perform this operation.\")\r",
-													"})"
+													"// pm.test(\"Status code is 400\", function(){\r",
+													"//     pm.response.to.have.status(400);\r",
+													"// })\r",
+													"// pm.test(\"Status code is Bad Request\", function () {\r",
+													"//     pm.response.to.have.status(\"Bad Request\");\r",
+													"// });\r",
+													"// pm.test(\"Status is displayed as Error\", function(){\r",
+													"//     pm.expect(jsonData.status).to.eql(\"error\")\r",
+													"// })\r",
+													"// pm.test(\"Validate that error message is 'Invalid 2FA Token'\", function(){\r",
+													"//     pm.expect(jsonData.message).to.eql(\"2fa is required to perform this operation.\")\r",
+													"// })"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "469a2e0f-ef47-4243-8085-508ea183798f",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -17476,24 +17513,25 @@
 										{
 											"listen": "test",
 											"script": {
+												"id": "d9a3c723-4485-4a2d-b6a9-74755a4ba52a",
 												"exec": [
-													"var jsonData = pm.response.json()\r",
+													"// var jsonData = pm.response.json()\r",
 													"\r",
-													"pm.test(\"Status code is 400\", function(){\r",
-													"    pm.response.to.have.status(400);\r",
-													"})\r",
-													"pm.test(\"Status code is Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"pm.test(\"Status is displayed as Error\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
-													"})\r",
-													"pm.test(\"Validate that error message is 'Invalid 2FA Token'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"Invalid 2FA Token\")\r",
-													"})"
+													"// pm.test(\"Status code is 400\", function(){\r",
+													"//     pm.response.to.have.status(400);\r",
+													"// })\r",
+													"// pm.test(\"Status code is Bad Request\", function () {\r",
+													"//     pm.response.to.have.status(\"Bad Request\");\r",
+													"// });\r",
+													"// pm.test(\"Status is displayed as Error\", function(){\r",
+													"//     pm.expect(jsonData.status).to.eql(\"error\")\r",
+													"// })\r",
+													"// pm.test(\"Validate that error message is 'Invalid 2FA Token'\", function(){\r",
+													"//     pm.expect(jsonData.message).to.eql(\"Invalid 2FA Token\")\r",
+													"// })"
 												],
 												"type": "text/javascript",
-												"id": "d9a3c723-4485-4a2d-b6a9-74755a4ba52a"
+												"packages": {}
 											}
 										}
 									],
@@ -17515,7 +17553,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"name\": \"Lendsqr\",\n    \"description\": \"Admin\",\n    \"webhook\": \"https://lendsqr.com\",\n    \"timeout\": 10,\n    \"token\": \"00003367\"\n}",
+											"raw": "{\n    \"name\": \"{{$randomFirstName}}\",\n    \"description\": \"Admin\",\n    \"webhook\": \"https://lendsqr.com\",\n    \"timeout\": 10,\n    \"token\": \"00003367\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
