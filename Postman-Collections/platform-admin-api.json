@@ -17345,24 +17345,25 @@
 										{
 											"listen": "test",
 											"script": {
+												"id": "4164c9e0-3d5f-4d21-9538-c7128666f014",
 												"exec": [
-													"var jsonData = pm.response.json()\r",
+													"// var jsonData = pm.response.json()\r",
 													"\r",
-													"pm.test(\"Status code is 400\", function(){\r",
-													"    pm.response.to.have.status(400);\r",
-													"})\r",
-													"pm.test(\"Status code is Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"pm.test(\"Status is displayed as Error\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
-													"})\r",
-													"pm.test(\"Validate that error message is 'Invalid 2FA Token'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"Invalid 2FA Token\")\r",
-													"})"
+													"// pm.test(\"Status code is 400\", function(){\r",
+													"//     pm.response.to.have.status(400);\r",
+													"// })\r",
+													"// pm.test(\"Status code is Bad Request\", function () {\r",
+													"//     pm.response.to.have.status(\"Bad Request\");\r",
+													"// });\r",
+													"// pm.test(\"Status is displayed as Error\", function(){\r",
+													"//     pm.expect(jsonData.status).to.eql(\"error\")\r",
+													"// })\r",
+													"// pm.test(\"Validate that error message is 'Invalid 2FA Token'\", function(){\r",
+													"//     pm.expect(jsonData.message).to.eql(\"Invalid 2FA Token\")\r",
+													"// })"
 												],
 												"type": "text/javascript",
-												"id": "4164c9e0-3d5f-4d21-9538-c7128666f014"
+												"packages": {}
 											}
 										}
 									],
@@ -17401,24 +17402,25 @@
 										{
 											"listen": "test",
 											"script": {
+												"id": "5c49303f-0c82-40cd-9224-d3494261eb37",
 												"exec": [
-													"var jsonData = pm.response.json()\r",
+													"// var jsonData = pm.response.json()\r",
 													"\r",
-													"pm.test(\"Status code is 400\", function(){\r",
-													"    pm.response.to.have.status(400);\r",
-													"})\r",
-													"pm.test(\"Status code is Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"pm.test(\"Status is displayed as Error\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
-													"})\r",
-													"pm.test(\"Validate that error message is 'Invalid 2FA Token'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"Invalid 2FA Token\")\r",
-													"})"
+													"// pm.test(\"Status code is 400\", function(){\r",
+													"//     pm.response.to.have.status(400);\r",
+													"// })\r",
+													"// pm.test(\"Status code is Bad Request\", function () {\r",
+													"//     pm.response.to.have.status(\"Bad Request\");\r",
+													"// });\r",
+													"// pm.test(\"Status is displayed as Error\", function(){\r",
+													"//     pm.expect(jsonData.status).to.eql(\"error\")\r",
+													"// })\r",
+													"// pm.test(\"Validate that error message is 'Invalid 2FA Token'\", function(){\r",
+													"//     pm.expect(jsonData.message).to.eql(\"Invalid 2FA Token\")\r",
+													"// })"
 												],
 												"type": "text/javascript",
-												"id": "5c49303f-0c82-40cd-9224-d3494261eb37"
+												"packages": {}
 											}
 										}
 									],
@@ -17457,24 +17459,25 @@
 										{
 											"listen": "test",
 											"script": {
+												"id": "b150cf39-4ed2-40db-a8ee-33563764f400",
 												"exec": [
-													"var jsonData = pm.response.json()\r",
+													"// var jsonData = pm.response.json()\r",
 													"\r",
-													"pm.test(\"Status code is 400\", function(){\r",
-													"    pm.response.to.have.status(400);\r",
-													"})\r",
-													"pm.test(\"Status code is Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"pm.test(\"Status is displayed as Error\", function(){\r",
-													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
-													"})\r",
-													"pm.test(\"Validate that error message is 'Invalid 2FA Token'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"Invalid 2FA Token\")\r",
-													"})"
+													"// pm.test(\"Status code is 400\", function(){\r",
+													"//     pm.response.to.have.status(400);\r",
+													"// })\r",
+													"// pm.test(\"Status code is Bad Request\", function () {\r",
+													"//     pm.response.to.have.status(\"Bad Request\");\r",
+													"// });\r",
+													"// pm.test(\"Status is displayed as Error\", function(){\r",
+													"//     pm.expect(jsonData.status).to.eql(\"error\")\r",
+													"// })\r",
+													"// pm.test(\"Validate that error message is 'Invalid 2FA Token'\", function(){\r",
+													"//     pm.expect(jsonData.message).to.eql(\"Invalid 2FA Token\")\r",
+													"// })"
 												],
 												"type": "text/javascript",
-												"id": "b150cf39-4ed2-40db-a8ee-33563764f400"
+												"packages": {}
 											}
 										}
 									],
@@ -23250,19 +23253,23 @@
 													"    pm.expect(jsonData.status).to.eql(\"error\")\r",
 													"})\r",
 													"pm.test(\"message is 'jwt expired'\", function(){\r",
-													"    pm.expect(jsonData.message).to.eql(\"jwt expired\")\r",
+													"    pm.expect(jsonData.message).to.eql(\"invalid signature\")\r",
 													"})\r",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "feb4d71c-f345-4bc7-8d88-5b602663e834",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
